@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Esta es una Calculadora Básica</h1>
+    <script>
+        let numero1 = 0;
+        let numero2 = 0;
+        let resultadoop = 0;
+        let seguir = "yes";
+
+        while (seguir === "yes") {
+            let operacion = prompt("Ingrese la operación (+, -, *, /, ^):");
+
+            switch (operacion) {
+                case "+":
+                    alert("USTED HA ELEGIDO REALIZAR UNA SUMA !!");
+                    numero1 = parseFloat(prompt("Ingrese el primer número"));
+                    numero2 = parseFloat(prompt("Ingrese el segundo número"));
+                    resultadoop = numero1 + numero2;
+                    alert("Resultado: " + resultadoop);
+                    console.log(resultadoop); 
+                    break;
+
+                case "-":
+                    alert("USTED HA ELEGIDO REALIZAR UNA RESTA !!");
+                    numero1 = parseFloat(prompt("Ingrese el primer número"));
+                    numero2 = parseFloat(prompt("Ingrese el segundo número"));
+                    resultadoop = numero1 - numero2;
+                    alert("Resultado: " + resultadoop);
+                    console.log(resultadoop); 
+                    break;
+
+                case "*":
+                    alert("USTED HA ELEGIDO REALIZAR UNA MULTIPLICACIÓN !!");
+                    numero1 = parseFloat(prompt("Ingrese el primer número"));
+                    numero2 = parseFloat(prompt("Ingrese el segundo número"));
+                    resultadoop = numero1 * numero2;
+                    alert("Resultado: " + resultadoop);
+                    console.log(resultadoop); 
+                    break;
+
+                case "/":
+                    alert("USTED HA ELEGIDO REALIZAR UNA DIVISIÓN !!");
+                    numero1 = parseFloat(prompt("Ingrese el primer número"));
+                    numero2 = parseFloat(prompt("Ingrese el segundo número"));
+                    if (numero2 === 0) {
+                        alert("Error: No se puede dividir entre cero.");
+                    } else {
+                        resultadoop = numero1 / numero2;
+                        alert("Resultado: " + resultadoop);
+                        console.log(resultadoop); 
+                    }
+                    break;
+
+                case "^":
+                    alert("USTED HA ELEGIDO REALIZAR UNA POTENCIA (^) !!");
+                    numero1 = parseFloat(prompt("Ingrese la base"));
+                    numero2 = parseFloat(prompt("Ingrese el exponente"));
+                    resultadoop = numero1 ** numero2;
+                    alert("Resultado: " + resultadoop);
+                    console.log(resultadoop); 
+                    break;
+
+                default:
+                    alert("Operación no válida");
+                    break;
+            }
+
+            
+            seguir = prompt("¿Desea continuar en el programa? (yes/no)");
+            if (seguir === null || seguir.toLowerCase() === "no") {
+                alert("Gracias por usar el programa.");
+                break;
+            }
+
+           
+            seguir = seguir.toLowerCase();
+        }
+    </script>
+</body>
+</html>

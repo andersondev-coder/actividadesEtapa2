@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar fondo y estilo</title>
+</head>
+<body>
+    
+    <h1>Objetivo</h1>
+    <p>Crear una página HTML con un título y un botón. Al hacer clic en el botón,
+ el color de fondo de la página debe cambiar aleatoriamente y el texto del título debe
+ alternar entre dos mensajes</p>
+ 
+ <h1 id="titulo">Este es un Titulo principal</h1>
+ <button id="boton">Cambiar de pagina y titulo</button>
+
+ <script>
+    let indice = 0;
+    const colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple'];
+    const titulos = ['Bienvenidos a mi sitio web','Explora nuestros productos','Conoce nuestro equipo','Contáctanos hoy','Últimas noticias','Nuestros servicios'];
+     let evento = document.getElementById("boton");
+    evento.addEventListener("click",function (){
+
+        document.body.style.background = colors [indice];
+        document.getElementById("titulo").textContent = titulos[indice];
+
+        
+        indice++;
+        if (indice>=colors.length) {
+
+            indice=0;
+            
+        }
+
+    })
+
+
+ </script>
+
+</body>
+</html>

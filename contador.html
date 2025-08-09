@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #contador {
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+    button {
+      font-size: 20px;
+      margin: 5px;
+      padding: 10px 20px;
+    }
+  </style>
+
+</head>
+<body>
+    <h1 id="cont">CONTANDOR</h1>
+    <button id="boton1" onclick="aumentar()">aumetar</button>
+    <button id="boton2" onclick="desminuir()">desminuir</button>
+    <button id="boton3" onclick="reset()">reiniciar</button>
+</body>
+<script>
+
+let invertalo = null;
+let contado=0;
+let contador = document.getElementById("cont");
+
+function aumentar(){
+detener();
+invertalo = setInterval(()=>{
+
+    contado++;
+    contador.textContent=contado;
+
+
+},100);}
+
+function desminuir(){
+detener();
+ invertalo = setInterval(()=>{
+
+    contado--;
+    contador.textContent=contado;
+
+
+},100)}
+
+function reset (){ 
+    detener() 
+    contado=0; 
+    contador.textContent=contado;
+
+}
+function detener(){
+
+   clearInterval(invertalo);
+
+}
+
+</script>
+</html>

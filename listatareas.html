@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de tareas</title>
+</head>
+<body>
+  <h1>Lista de tareas programadas</h1>
+
+  <input type="text" placeholder="Agregar tarea" id="tareas">
+  <button id="agregar" onclick="addtareas()">Agregar más tareas</button>
+
+  <h1>Ver actuales tareas:</h1>
+  <ul id="list"></ul>
+
+  <script>
+    
+    let listado = document.getElementById("list");
+
+    function addtareas() {
+      let entrada = document.getElementById("tareas");
+      let nuevaTarea = entrada.value.trim();
+
+      if (nuevaTarea !== "") {
+        let nuevalist = document.createElement("li");
+        nuevalist.textContent = nuevaTarea;
+
+        const botonEliminar = document.createElement("button");
+        botonEliminar.textContent = "Eliminar";
+        botonEliminar.style.marginLeft = "10px";
+
+        
+        botonEliminar.onclick = function () {
+          nuevalist.remove();
+        };
+
+        nuevalist.appendChild(botonEliminar); 
+        listado.appendChild(nuevalist);       
+        entrada.value = "";                   
+      } else {
+        alert("Por favor escribe una tarea.");
+      }
+    }
+  </script>
+</body>
+</html>
